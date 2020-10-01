@@ -21,8 +21,8 @@ public class TherapySettingsViewModel: ObservableObject {
     private let didSave: SaveCompletion?
 
     private let initialTherapySettings: TherapySettings
-    let pumpSupportedIncrements: PumpSupportedIncrements?
-    let syncPumpSchedule: PumpManager.SyncSchedule?
+    let pumpSupportedIncrements: (() -> PumpSupportedIncrements?)?
+    let syncPumpSchedule: (() -> PumpManager.SyncSchedule?)?
     let sensitivityOverridesEnabled: Bool
     public var prescription: Prescription?
     
@@ -36,8 +36,8 @@ public class TherapySettingsViewModel: ObservableObject {
                 therapySettings: TherapySettings,
                 glucoseUnit: HKUnit,
                 supportedInsulinModelSettings: SupportedInsulinModelSettings = SupportedInsulinModelSettings(fiaspModelEnabled: true, walshModelEnabled: true),
-                pumpSupportedIncrements: PumpSupportedIncrements? = nil,
-                syncPumpSchedule: PumpManager.SyncSchedule? = nil,
+                pumpSupportedIncrements: (() -> PumpSupportedIncrements?)? = nil,
+                syncPumpSchedule: (() -> PumpManager.SyncSchedule?)? = nil,
                 sensitivityOverridesEnabled: Bool = false,
                 prescription: Prescription? = nil,
                 chartColors: ChartColorPalette,
