@@ -55,8 +55,8 @@ public struct DeliveryLimitsEditor: View {
            didSave: (() -> Void)? = nil
     ) {
         precondition(viewModel.pumpSupportedIncrements != nil)
-        let maxBasal = HKQuantity(unit: .internationalUnitsPerHour, doubleValue: viewModel.therapySettings.maximumBasalRatePerHour!)
-        let maxBolus = HKQuantity(unit: .internationalUnit(), doubleValue: viewModel.therapySettings.maximumBolus!)
+        let maxBasal = HKQuantity(unit: .internationalUnitsPerHour, doubleValue: viewModel.therapySettings.maximumBasalRatePerHour ?? 1)
+        let maxBolus = HKQuantity(unit: .internationalUnit(), doubleValue: viewModel.therapySettings.maximumBolus ?? 2)
         
         self.init(
             value: DeliveryLimits(maximumBasalRate: maxBasal, maximumBolus: maxBolus),
