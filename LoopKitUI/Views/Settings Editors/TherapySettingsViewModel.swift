@@ -53,6 +53,8 @@ public class TherapySettingsViewModel: ObservableObject {
         self.supportedInsulinModelSettings = supportedInsulinModelSettings
         self.chartColors = chartColors
         self.didSave = didSave
+        
+        
     }
     
     var deliveryLimits: DeliveryLimits {

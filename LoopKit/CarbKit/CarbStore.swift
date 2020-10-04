@@ -220,6 +220,8 @@ public final class CarbStore: HealthKitSampleStore {
         self.provenanceIdentifier = provenanceIdentifier
         
         let observationEnabled = observationInterval > 0
+        
+        log.default("CarbStore init")
 
         super.init(healthStore: healthStore,
                    observeHealthKitSamplesFromCurrentApp: false,
@@ -253,6 +255,7 @@ public final class CarbStore: HealthKitSampleStore {
             }
         }
         semaphore.wait()
+        log.default("CarbStore init finished")
     }
 
     // Migrate modifiedCarbEntries and deletedCarbEntryIDs
