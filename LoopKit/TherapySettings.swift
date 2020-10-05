@@ -37,8 +37,8 @@ public struct TherapySettings: Equatable, Codable {
     public var isComplete: Bool {
         return
             glucoseTargetRangeSchedule != nil &&
-            preMealTargetRange != nil &&
-            workoutTargetRange != nil &&
+            //preMealTargetRange != nil &&
+            //workoutTargetRange != nil &&
             maximumBasalRatePerHour != nil &&
             maximumBolus != nil &&
             suspendThreshold != nil &&

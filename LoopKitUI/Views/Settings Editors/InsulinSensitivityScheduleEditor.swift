@@ -59,7 +59,7 @@ public struct InsulinSensitivityScheduleEditor: View {
             unit: sensitivityUnit,
             guardrail: .insulinSensitivity,
             selectableValueStride: stride,
-            defaultFirstScheduleItemValue: Guardrail.insulinSensitivity.absoluteBounds.upperBound,
+            defaultFirstScheduleItemValue: Guardrail.insulinSensitivity.startingSuggestion ?? Guardrail.insulinSensitivity.absoluteBounds.upperBound,
             confirmationAlertContent: confirmationAlertContent,
             guardrailWarning: InsulinSensitivityGuardrailWarning.init(crossedThresholds:),
             onSave: {
